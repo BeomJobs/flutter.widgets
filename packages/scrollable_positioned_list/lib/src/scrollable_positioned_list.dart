@@ -38,6 +38,7 @@ class ScrollablePositionedList extends StatefulWidget {
   const ScrollablePositionedList.builder({
     @required this.itemCount,
     @required this.itemBuilder,
+    this.headerSlivers = const [],
     Key key,
     this.itemScrollController,
     ItemPositionsListener itemPositionsListener,
@@ -64,6 +65,7 @@ class ScrollablePositionedList extends StatefulWidget {
     @required this.itemCount,
     @required this.itemBuilder,
     @required this.separatorBuilder,
+    this.headerSlivers = const [],
     Key key,
     this.itemScrollController,
     ItemPositionsListener itemPositionsListener,
@@ -94,6 +96,8 @@ class ScrollablePositionedList extends StatefulWidget {
   /// Called to build separators for between each item in the list.
   /// Called with 0 <= index < itemCount - 1.
   final IndexedWidgetBuilder separatorBuilder;
+
+  final List<Widget> headerSlivers;
 
   /// Controller for jumping or scrolling to an item.
   final ItemScrollController itemScrollController;

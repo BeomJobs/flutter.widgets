@@ -29,6 +29,7 @@ class PositionedList extends StatefulWidget {
   const PositionedList({
     @required this.itemCount,
     @required this.itemBuilder,
+    this.headerSlivers = const [],
     this.separatorBuilder,
     this.controller,
     this.itemPositionNotifier,
@@ -53,6 +54,8 @@ class PositionedList extends StatefulWidget {
   /// Called to build children for the list with
   /// 0 <= index < itemCount.
   final IndexedWidgetBuilder itemBuilder;
+
+  final List<Widget> headerSlivers;
 
   /// If not null, called to build separators for between each item in the list.
   /// Called with 0 <= index < itemCount - 1.
@@ -174,6 +177,7 @@ class _PositionedListState extends State<PositionedList> {
           physics: widget.physics,
           semanticChildCount: widget.semanticChildCount ?? widget.itemCount,
           slivers: <Widget>[
+            ...widget.headerSlivers,
             if (widget.positionedIndex > 0)
               SliverPadding(
                 padding: _leadingSliverPadding,
