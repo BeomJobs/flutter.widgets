@@ -299,6 +299,7 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
                     return PositionedList(
                       itemBuilder: widget.itemBuilder,
                       separatorBuilder: widget.separatorBuilder,
+                      headerSlivers: widget.headerSlivers,
                       itemCount: widget.itemCount,
                       positionedIndex: backTarget,
                       controller: backScrollController,
@@ -334,6 +335,7 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
                         return PositionedList(
                           itemBuilder: widget.itemBuilder,
                           separatorBuilder: widget.separatorBuilder,
+                          headerSlivers: widget.headerSlivers,
                           itemCount: widget.itemCount,
                           itemPositionNotifier: frontItemPositionNotifier,
                           positionedIndex: frontTarget,
